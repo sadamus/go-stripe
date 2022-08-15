@@ -10,8 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Mon Aug 15 05:29:42 2022
- 
+# Make data base, printed on Mon Aug 15 10:24:23 2022
 
 # Variables
 
@@ -92,6 +91,7 @@ XPC_FLAGS = 0x0
 # default
 MAKE = $(MAKE_COMMAND)
 # default
+ 
 MAKECMDGOALS := all
 # environment
 SHLVL = 1
@@ -164,9 +164,9 @@ VSCODE_PID = 853
 
 # Directories
 
-# . (device 16777232, inode 25407776): 11 files, no impossibilities.
+# . (device 16777232, inode 25407776): 12 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -210,7 +210,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-13 20:03:34
+#  Last modified 2022-08-15 06:07:27
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -230,6 +230,7 @@ stop_back:
 #  commands to execute (from `Makefile', line 57):
 	@echo "Stopping the back end..."
 	@-pkill -SIGTERM -f "gostripe_api -port=${API_PORT}"
+ 
 	@echo "Stopped back end"
 	
 
@@ -247,7 +248,7 @@ start_front: build_front
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 35):
 	@echo "Starting the front end..."
-	@env STRIPE_KEY=${STRIPE_KEY} STRIPE_SECRET=${STRIPE_SECRET} ./dist/gostripe -port=${GOSTRIPE_PORT} -dsn="${DSN}" &
+	@env STRIPE_KEY=${STRIPE_KEY} STRIPE_SECRET=${STRIPE_SECRET} ./dist/gostripe -port=${GOSTRIPE_PORT}  &
 	@echo "Front end running!"
 	
 
@@ -273,7 +274,7 @@ start_back: build_back
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 41):
 	@echo "Starting the back end..."
-	@env STRIPE_KEY=${STRIPE_KEY} STRIPE_SECRET=${STRIPE_SECRET} ./dist/gostripe_api -port=${API_PORT}  -dsn="${DSN}" &
+	@env STRIPE_KEY=${STRIPE_KEY} STRIPE_SECRET=${STRIPE_SECRET} ./dist/gostripe_api -port=${API_PORT} &
 	@echo "Back end running!"
 	
 
@@ -311,6 +312,6 @@ clean:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Aug 15 05:29:42 2022
+# Finished Make data base on Mon Aug 15 10:24:23 2022
 
  
